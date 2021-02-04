@@ -27,14 +27,14 @@ module.exports = function(router, database) {
     return database.getUserWithEmail(email)
     .then(user => {
       console.log("values received", user)
-      if (password === user.password) {
-        console.log("mathichg passwords/email")
-        return user;
-
-      }
-      // if (bcrypt.compareSync(password, user.password)) {
+      // if (password === user.password) {
+      //   console.log("mathichg passwords/email")
       //   return user;
+
       // }
+      if (bcrypt.compareSync(password, user.password)) {
+        return user;
+      }
       return null;
     });
   }
