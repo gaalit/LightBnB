@@ -9,7 +9,7 @@ module.exports = function(router, database) {
     database.addUser(user)
     .then(user => {
       if (!user) {
-        res.send({error: "error"});
+        res.send({error: "create new user error"});
         return;
       }
       req.session.userId = user.id;
@@ -26,9 +26,15 @@ module.exports = function(router, database) {
   const login =  function(email, password) {
     return database.getUserWithEmail(email)
     .then(user => {
-      if (bcrypt.compareSync(password, user.password)) {
+      console.log("values received", user)
+      if (password === user.password) {
+        console.log("mathichg passwords/email")
         return user;
+
       }
+      // if (bcrypt.compareSync(password, user.password)) {
+      //   return user;
+      // }
       return null;
     });
   }
@@ -36,10 +42,11 @@ module.exports = function(router, database) {
 
   router.post('/login', (req, res) => {
     const {email, password} = req.body;
+    console.log("user input", req.body)
     login(email, password)
       .then(user => {
         if (!user) {
-          res.send({error: "error"});
+          res.send({error: "no user object! error"});
           return;
         }
         req.session.userId = user.id;

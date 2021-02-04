@@ -1,3 +1,10 @@
+DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS properties;
+DROP TABLE IF EXISTS property_reviews;
+DROP TABLE IF EXISTS reservations;
+
+
+
 CREATE TABLE users (
   id SERIAL PRIMARY KEY NOT NULL,
   name VARCHAR(255) NOT NULL,

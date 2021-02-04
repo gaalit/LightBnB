@@ -1,6 +1,6 @@
 
 INSERT INTO users (name, email, password)
-VALUES ('Johnny B', 'jonhy@geemail.com', '$2a$10$FB/BOAVhpuLvpOREQVmvmezD4ED/.JBIDRh70tGevYzYzQgFId2u.'),
+VALUES ('Johnny B', 'a@b.c', 'd'),
 ('Bobby J', 'bobby@geemail.com', '$2a$10$FB/BOAVhpuLvpOREQVmvmezD4ED/.JBIDRh70tGevYzYzQgFId2u.'),
 ('Janice S', 'janice.s@geemail.com', '$2a$10$FB/BOAVhpuLvpOREQVmvmezD4ED/.JBIDRh70tGevYzYzQgFId2u.');
 
@@ -15,6 +15,6 @@ VALUES (1, 1, '2018-09-11', '2018-09-26'),
 (3, 3, '2021-10-01', '2021-10-14');
 
 INSERT INTO property_reviews (guest_id, property_id, reservation_id, rating, message)
-VALUES (1, 1, 4, 4, 'message'),
-(2, 2, 5, 5, 'message'),
-(3, 3, 6, 3, 'message');
+VALUES (1, 1, 1, 1, 'message'),
+(2, 2, 2, 2, 'message'),
+(3, 3, 3, 3, 'message');
