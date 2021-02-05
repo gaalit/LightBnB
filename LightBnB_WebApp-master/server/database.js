@@ -190,7 +190,7 @@ exports.getAllReservations = getAllReservations;
  console.log(queryString, queryParams);
 
  // 6
- return db.query(queryString, queryParams)
+ return query(queryString, queryParams)
   .then(res => res.rows);
 };
 
